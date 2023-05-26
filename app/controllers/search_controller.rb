@@ -7,5 +7,6 @@ class SearchController < ApplicationController
     # payload = JSON.parse(response.body, symbolize_names: true)
     # @members = payload.map { |member_data| Member.new(member_data) }
     @members = AirbenderService.new.nation_members(params['nation'])
+    require 'pry'; binding.pry
   end
 end
